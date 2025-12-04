@@ -1,0 +1,338 @@
+// Main Application Logic
+
+// Form Validation and Handling
+function initFormHandling() {
+    const contactForm = document.getElementById('contact-form');
+    
+    if (!contactForm) return;
+    
+    // Real-time validation
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateInput(this);
+        });
+        
+        input.addEventListener('input', function() {
+            if (this.classList.contains('error')) {
+                validateInput(this);
+            }
+        });
+    });
+    
+    // Form submission
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        let isValid = true;
+        
+        inputs.forEach(input => {
+            if (!validateInput(input)) {
+                isValid = false;
+            }
+        });
+        
+        if (isValid) {
+            // Form is valid
+            console.log('Form submitted successfully!');
+            showSuccessMessage();
+            // Here you would normally send the form data to a server
+        } else {
+            // Show error message
+            showErrorMessage();
+        }
+    });
+}
+
+// Validate individual input
+function validateInput(input) {
+    const value = input.value.trim();
+    
+    // Remove previous error state
+    input.classList.remove('error');
+    
+    // Check if required field is empty
+    if (input.hasAttribute('required') && value === '') {
+        input.classList.add('error');
+        return false;
+    }
+    
+    // Validate email format
+    if (input.type === 'email' && value !== '') {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            input.classList.add('error');
+            return false;
+        }
+    }
+    
+    // Validate email confirmation match
+    if (input.id === 'email-confirm') {
+        const emailInput = document.getElementById('email');
+        if (emailInput && value !== emailInput.value) {
+            input.classList.add('error');
+            return false;
+        }
+    }
+    
+    // Validate phone number (Japanese format)
+    if (input.type === 'tel' && value !== '') {
+        const phoneRegex = /^[0-9\-]+$/;
+        if (!phoneRegex.test(value)) {
+            input.classList.add('error');
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+// Show success message
+function showSuccessMessage() {
+    const message = document.createElement('div');
+    message.className = 'form-message form-message--success';
+    message.textContent = 'お問い合わせありがとうございます。担当者より折り返しご連絡いたします。';
+    message.style.cssText = `
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 10000;
+        animation: slideDown 0.5s ease;
+    `;
+    
+    document.body.appendChild(message);
+    
+    setTimeout(() => {
+        message.style.animation = 'slideUp 0.5s ease';
+        setTimeout(() => message.remove(), 500);
+    }, 3000);
+}
+
+// Show error message
+function showErrorMessage() {
+    const message = document.createElement('div');
+    message.className = 'form-message form-message--error';
+    message.textContent = '入力内容に誤りがあります。赤枠の項目をご確認ください。';
+    message.style.cssText = `
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #E54D42;
+        color: white;
+        padding: 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 10000;
+        animation: slideDown 0.5s ease;
+    `;
+    
+    document.body.appendChild(message);
+    
+    setTimeout(() => {
+        message.style.animation = 'slideUp 0.5s ease';
+        setTimeout(() => message.remove(), 500);
+    }, 3000);
+}
+
+// Add message animations
+function addMessageAnimations() {
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+        }
+        
+        .form__input.error,
+        .form__textarea.error {
+            border-color: #E54D42;
+            background-color: #FFF5F5;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Campaign Banner Button Click Handler
+function initCampaignButtonHandlers() {
+    const campaignButtons = document.querySelectorAll('.campaign-banner__button');
+    
+    campaignButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Scroll to contact form
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Header CTA Button Click Handler
+function initHeaderButtonHandler() {
+    const headerButton = document.querySelector('.navbar .btn--primary');
+    
+    if (headerButton) {
+        headerButton.addEventListener('click', function() {
+            // Scroll to contact form
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+}
+
+// Hero CTA Button Click Handler
+function initHeroButtonHandler() {
+    const heroButton = document.querySelector('.hero__content .btn--cta');
+    
+    if (heroButton) {
+        heroButton.addEventListener('click', function() {
+            // Scroll to contact form
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+}
+
+// Lazy Load Images
+function initLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+}
+
+// Back to Top Button
+function initBackToTop() {
+    const backToTopButton = document.createElement('button');
+    backToTopButton.innerHTML = '↑';
+    backToTopButton.className = 'back-to-top';
+    backToTopButton.style.cssText = `
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--color-primary);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    `;
+    
+    document.body.appendChild(backToTopButton);
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            backToTopButton.style.opacity = '1';
+            backToTopButton.style.visibility = 'visible';
+        } else {
+            backToTopButton.style.opacity = '0';
+            backToTopButton.style.visibility = 'hidden';
+        }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    backToTopButton.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1)';
+    });
+    
+    backToTopButton.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+    });
+}
+
+// Print Current Year in Footer (if needed)
+function updateFooterYear() {
+    const yearElements = document.querySelectorAll('[data-year]');
+    const currentYear = new Date().getFullYear();
+    
+    yearElements.forEach(el => {
+        el.textContent = currentYear;
+    });
+}
+
+// Loading Animation
+function showLoadingAnimation() {
+    window.addEventListener('load', () => {
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+            document.body.style.transition = 'opacity 0.5s ease';
+            document.body.style.opacity = '1';
+        }, 100);
+    });
+}
+
+// Initialize all main functionality
+document.addEventListener('DOMContentLoaded', function() {
+    initFormHandling();
+    addMessageAnimations();
+    initCampaignButtonHandlers();
+    initHeaderButtonHandler();
+    initHeroButtonHandler();
+    initLazyLoading();
+    initBackToTop();
+    updateFooterYear();
+    showLoadingAnimation();
+    
+    console.log('ソルクラ for 販売管理 - Website loaded successfully! 🚀');
+});

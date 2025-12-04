@@ -1,0 +1,132 @@
+/* Section-Specific Styles */
+
+/* This file contains any additional section-specific styles 
+   that don't fit into components or layout */
+
+/* Hero Section Additional Styles */
+.hero__photo {
+    width: 100%;
+    border-radius: var(--radius-xl);
+}
+
+/* Solution Card Pricing Table Specific */
+.solution-card__pricing {
+    width: 100%;
+}
+
+/* Features Diagram */
+.features__flowchart {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Smooth Scroll Offset for Fixed Header */
+section[id] {
+    scroll-margin-top: 80px;
+}
+
+/* Campaign Banner Content Styling */
+.campaign-banner .container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.campaign-banner__inner {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+/* Comparison Table Wrapper */
+.comparison__wrapper {
+    position: relative;
+}
+
+/* Responsive Table Hint */
+.comparison__wrapper::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
+    pointer-events: none;
+}
+
+/* Case Studies Grid Alignment */
+.cases__grid .case-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.case-card__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.case-card__description {
+    flex: 1;
+}
+
+/* Services Grid Equal Heights */
+.services__grid .service-card {
+    height: 100%;
+}
+
+/* Contact Form Privacy Section */
+.form__privacy-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.form__privacy-content a:hover {
+    color: var(--color-primary-dark);
+}
+
+/* Footer Bottom Border */
+.footer::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: var(--spacing-3xl);
+}
+
+/* Pricing Examples Center Alignment */
+.pricing__examples {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Integration Logos Hover Effect */
+.integration-logo {
+    transition: transform var(--transition-base);
+}
+
+.integration-column:hover .integration-logo {
+    transform: scale(1.05);
+}
+
+/* Flow Steps Connector Line */
+.flow__steps {
+    position: relative;
+}
+
+/* Solution Features Equal Height */
+.solution-features .solution-feature {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.solution-feature__text {
+    flex: 1;
+}

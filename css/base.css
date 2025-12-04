@@ -1,0 +1,129 @@
+/* Base Styles */
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--color-dark);
+    background-color: var(--color-white);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-md);
+}
+
+h1 {
+    font-size: var(--font-size-6xl);
+    font-weight: var(--font-weight-black);
+}
+
+h2 {
+    font-size: var(--font-size-4xl);
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+}
+
+h4 {
+    font-size: var(--font-size-lg);
+}
+
+h5 {
+    font-size: var(--font-size-md);
+}
+
+h6 {
+    font-size: var(--font-size-base);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    color: var(--color-secondary);
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-secondary-dark);
+}
+
+strong, b {
+    font-weight: var(--font-weight-bold);
+}
+
+/* Text Utilities */
+.text--red {
+    color: var(--color-red);
+}
+
+.text--primary {
+    color: var(--color-primary);
+}
+
+.text--secondary {
+    color: var(--color-secondary);
+}
+
+.text--small {
+    font-size: var(--font-size-sm);
+}
+
+.text--large {
+    font-size: var(--font-size-lg);
+}
+
+.text--center {
+    text-align: center;
+}
+
+.text--bold {
+    font-weight: var(--font-weight-bold);
+}
+
+/* Container */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Section Title */
+.section__title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    line-height: var(--line-height-normal);
+}
+/* 
+.section__title--decorated {
+    position: relative;
+    padding-bottom: var(--spacing-xl);
+}
+
+.section__title--decorated::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: red;
+} */
+
+/* Link */
+.link {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: var(--color-primary-dark);
+}

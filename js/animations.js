@@ -1,6 +1,3 @@
-// Animations and Interactions
-
-// Smooth Scroll for Navigation Links
 function initSmoothScroll() {
     const navLinks = document.querySelectorAll('.navbar__link');
     
@@ -21,7 +18,6 @@ function initSmoothScroll() {
     });
 }
 
-// Scroll-triggered Fade-in Animation
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -37,7 +33,6 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // Elements to animate
     const animatedElements = document.querySelectorAll(`
         .problem-card,
         .solution-feature,
@@ -55,7 +50,6 @@ function initScrollAnimations() {
     });
 }
 
-// Active Navigation Link on Scroll
 function initActiveNavigation() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar__link');
@@ -81,10 +75,9 @@ function initActiveNavigation() {
     }
 
     window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink(); // Initial call
+    updateActiveLink(); 
 }
 
-// Add active class style
 function addActiveNavStyle() {
     const style = document.createElement('style');
     style.textContent = `
@@ -97,9 +90,8 @@ function addActiveNavStyle() {
 }
 
 
-// Card Hover Tilt Effect
 function initCardTiltEffect() {
-    const cards = document.querySelectorAll('.feature-card, .case-card,');
+    const cards = document.querySelectorAll('.feature-card, .case-card');
     
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -126,7 +118,6 @@ function initCardTiltEffect() {
     });
 }
 
-// Header Shadow on Scroll
 function initHeaderShadow() {
     const header = document.querySelector('.header');
     
@@ -139,7 +130,6 @@ function initHeaderShadow() {
     });
 }
 
-// Number Counter Animation
 function initNumberCounters() {
     const counters = document.querySelectorAll('[data-counter]');
     
@@ -174,15 +164,11 @@ function initNumberCounters() {
     counters.forEach(counter => observer.observe(counter));
 }
 
-// Initialize all animations when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initScrollAnimations();
     initActiveNavigation();
     addActiveNavStyle();
-    initParallaxEffect();
-    initButtonAnimations();
-    addRippleStyle();
     initCardTiltEffect();
     initHeaderShadow();
     initNumberCounters();

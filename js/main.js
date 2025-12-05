@@ -1,12 +1,8 @@
-// Main Application Logic
-
-// Form Validation and Handling
 function initFormHandling() {
     const contactForm = document.getElementById('contact-form');
     
     if (!contactForm) return;
     
-    // Real-time validation
     const inputs = contactForm.querySelectorAll('input, textarea');
     
     inputs.forEach(input => {
@@ -21,7 +17,6 @@ function initFormHandling() {
         });
     });
     
-    // Form submission
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -34,31 +29,24 @@ function initFormHandling() {
         });
         
         if (isValid) {
-            // Form is valid
             console.log('Form submitted successfully!');
             showSuccessMessage();
-            // Here you would normally send the form data to a server
         } else {
-            // Show error message
             showErrorMessage();
         }
     });
 }
 
-// Validate individual input
 function validateInput(input) {
     const value = input.value.trim();
     
-    // Remove previous error state
     input.classList.remove('error');
     
-    // Check if required field is empty
     if (input.hasAttribute('required') && value === '') {
         input.classList.add('error');
         return false;
     }
     
-    // Validate email format
     if (input.type === 'email' && value !== '') {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
@@ -67,7 +55,6 @@ function validateInput(input) {
         }
     }
     
-    // Validate email confirmation match
     if (input.id === 'email-confirm') {
         const emailInput = document.getElementById('email');
         if (emailInput && value !== emailInput.value) {
@@ -76,7 +63,6 @@ function validateInput(input) {
         }
     }
     
-    // Validate phone number (Japanese format)
     if (input.type === 'tel' && value !== '') {
         const phoneRegex = /^[0-9\-]+$/;
         if (!phoneRegex.test(value)) {
@@ -88,7 +74,6 @@ function validateInput(input) {
     return true;
 }
 
-// Show success message
 function showSuccessMessage() {
     const message = document.createElement('div');
     message.className = 'form-message form-message--success';
@@ -115,7 +100,6 @@ function showSuccessMessage() {
     }, 3000);
 }
 
-// Show error message
 function showErrorMessage() {
     const message = document.createElement('div');
     message.className = 'form-message form-message--error';
@@ -142,7 +126,6 @@ function showErrorMessage() {
     }, 3000);
 }
 
-// Add message animations
 function addMessageAnimations() {
     const style = document.createElement('style');
     style.textContent = `
@@ -178,13 +161,11 @@ function addMessageAnimations() {
 }
 
 
-// Header CTA Button Click Handler
 function initHeaderButtonHandler() {
     const headerButton = document.querySelector('.navbar .btn--primary');
     
     if (headerButton) {
         headerButton.addEventListener('click', function() {
-            // Scroll to contact form
             const contactSection = document.getElementById('contact');
             if (contactSection) {
                 contactSection.scrollIntoView({
@@ -196,13 +177,11 @@ function initHeaderButtonHandler() {
     }
 }
 
-// Hero CTA Button Click Handler
 function initHeroButtonHandler() {
     const heroButton = document.querySelector('.hero__content .btn--cta');
     
     if (heroButton) {
         heroButton.addEventListener('click', function() {
-            // Scroll to contact form
             const contactSection = document.getElementById('contact');
             if (contactSection) {
                 contactSection.scrollIntoView({
@@ -214,7 +193,6 @@ function initHeroButtonHandler() {
     }
 }
 
-// Lazy Load Images
 function initLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
     
@@ -232,7 +210,7 @@ function initLazyLoading() {
     images.forEach(img => imageObserver.observe(img));
 }
 
-// Back to Top Button
+
 function initBackToTop() {
     const backToTopButton = document.createElement('button');
     backToTopButton.innerHTML = '↑';
@@ -243,7 +221,7 @@ function initBackToTop() {
         right: 40px;
         width: 50px;
         height: 50px;
-        background-color: var(--color-primary);
+        background-color: #E57D54;
         color: white;
         border: none;
         border-radius: 50%;
@@ -284,7 +262,7 @@ function initBackToTop() {
     });
 }
 
-// Print Current Year in Footer (if needed)
+
 function updateFooterYear() {
     const yearElements = document.querySelectorAll('[data-year]');
     const currentYear = new Date().getFullYear();
@@ -294,7 +272,6 @@ function updateFooterYear() {
     });
 }
 
-// Loading Animation
 function showLoadingAnimation() {
     window.addEventListener('load', () => {
         document.body.style.opacity = '0';
@@ -305,11 +282,9 @@ function showLoadingAnimation() {
     });
 }
 
-// Initialize all main functionality
 document.addEventListener('DOMContentLoaded', function() {
     initFormHandling();
     addMessageAnimations();
-    initCampaignButtonHandlers();
     initHeaderButtonHandler();
     initHeroButtonHandler();
     initLazyLoading();
@@ -321,8 +296,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-// <<>>MYCODE
 const costData = [
     {
         title: "毎月手動で送っていた請求書送付を自動化",

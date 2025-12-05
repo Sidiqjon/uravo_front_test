@@ -1,33 +1,21 @@
-/* Section-Specific Styles */
-
-/* This file contains any additional section-specific styles 
-   that don't fit into components or layout */
-
-/* Hero Section Additional Styles */
 .hero__photo {
     width: 100%;
     border-radius: var(--radius-xl);
 }
 
-/* Solution Card Pricing Table Specific */
 .solution-card__pricing {
     width: 100%;
 }
 
-/* Features Diagram */
 .features__flowchart {
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Smooth Scroll Offset for Fixed Header */
 section[id] {
     scroll-margin-top: 80px;
 }
 
-
-
-/* Case Studies Grid Alignment */
 .cases__grid .case-card {
     height: 100%;
     display: flex;
@@ -44,7 +32,6 @@ section[id] {
     flex: 1;
 }
 
-/* Contact Form Privacy Section */
 .form__privacy-content a {
     color: var(--color-primary);
     text-decoration: underline;
@@ -54,15 +41,12 @@ section[id] {
     color: var(--color-primary-dark);
 }
 
-/* Pricing Examples Center Alignment */
 .pricing__examples {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
-/* Integration Logos Hover Effect */
 .integration-logo {
     transition: transform var(--transition-base);
 }
@@ -71,7 +55,6 @@ section[id] {
     transform: scale(1.05);
 }
 
-/* Solution Features Equal Height */
 .solution-features .solution-feature {
     display: flex;
     flex-direction: column;

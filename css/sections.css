@@ -25,19 +25,6 @@ section[id] {
     scroll-margin-top: 80px;
 }
 
-/* Campaign Banner Content Styling */
-.campaign-banner .container {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.campaign-banner__inner {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-lg);
-}
 
 /* Comparison Table Wrapper */
 .comparison__wrapper {

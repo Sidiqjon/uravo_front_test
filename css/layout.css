@@ -128,7 +128,7 @@ section {
 
 /* Features Section */
 .features-section {
-    background-color: var(--color-lightest-gray);
+    background-color: var(--color-white);
 }
 
 .features__diagram {
@@ -136,11 +136,17 @@ section {
     text-align: center;
 }
 
-.features__grid {
+
+.feature-cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-xl);
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
+
+
 
 /* Integrations Section */
 .integrations-section {

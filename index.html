@@ -188,114 +188,86 @@
         <section id="cost-reduction" class="cost-section">
             <div class="container">
                 <h2 class="section__title">ー　ソルクラでできるコストカット　ー</h2>
-                
-                <div class="cost__grid">
-                    <div class="cost-card">
-                        <div class="cost-card__title">毎月手動で送っていた請求書送付を自動化</div>
-                        <div class="cost-card__savings"><span class="cost-card__savings_number">年100万</span>円の削減</div>
-                        <div class="cost-card__comparison">
-                            <div class="cost-card__before_wrapper">
-                                <div class="cost-card__before">
-                                    <div class="cost-card__label">通信10時間</div>
-                                    <div class="cost-card__box">
-                                        <div class="cost-card__work">作業時間<br>30時間</div>
-                                    </div>
-                                </div>
-                                <img class="right_arrow" src="./assets/icons/right_arrow.svg" alt="">
-                            </div>
-                            <div class="cost-card__after">
-                                <div class="cost-card__box">
-                                    <div class="cost-card__work">作業時間<br>30時間</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="cost-card">
-                        <div class="cost-card__title">毎月手動で送っていた請求書送付を自動化</div>
-                        <div class="cost-card__savings"><span class="cost-card__savings_number">年100万</span>円の削減</div>
-                        <div class="cost-card__comparison">
-                            <div class="cost-card__before_wrapper">
-                                <div class="cost-card__before">
-                                    <div class="cost-card__label">通信10時間</div>
-                                    <div class="cost-card__box">
-                                        <div class="cost-card__work">作業時間<br>30時間</div>
-                                    </div>
-                                </div>
-                                <img class="right_arrow" src="./assets/icons/right_arrow.svg" alt="">
-                            </div>
-                            <div class="cost-card__after">
-                                <div class="cost-card__box">
-                                    <div class="cost-card__work">作業時間<br>30時間</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="cost-card">
-                        <div class="cost-card__title">毎月手動で送っていた請求書送付を自動化</div>
-                        <div class="cost-card__savings"><span class="cost-card__savings_number">年100万</span>円の削減</div>
-                        <div class="cost-card__comparison">
-                            <div class="cost-card__before_wrapper">
-                                <div class="cost-card__before">
-                                    <div class="cost-card__label">通信10時間</div>
-                                    <div class="cost-card__box">
-                                        <div class="cost-card__work">作業時間<br>30時間</div>
-                                    </div>
-                                </div>
-                                <img class="right_arrow" src="./assets/icons/right_arrow.svg" alt="">
-                            </div>
-                            <div class="cost-card__after">
-                                <div class="cost-card__box">
-                                    <div class="cost-card__work">作業時間<br>30時間</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="cost__grid" id="costGrid">
 
-                    <div class="cost-card">
-                        <div class="cost-card__title">毎月手動で送っていた請求書送付を自動化</div>
-                        <div class="cost-card__savings"><span class="cost-card__savings_number">年100万</span>円の削減</div>
-                        <div class="cost-card__comparison">
-                            <div class="cost-card__before_wrapper">
-                                <div class="cost-card__before">
-                                    <div class="cost-card__label">通信10時間</div>
-                                    <div class="cost-card__box">
-                                        <div class="cost-card__work">作業時間<br>30時間</div>
-                                    </div>
-                                </div>
-                                <img class="right_arrow" src="./assets/icons/right_arrow.svg" alt="">
+                    <template id="costCardTemplate">
+                        <div class="cost-card">
+                            <div class="cost-card__title"></div>
+                            <div class="cost-card__savings">
+                                <span class="cost-card__savings_number"></span>円の削減
                             </div>
-                            <div class="cost-card__after">
-                                <div class="cost-card__box">
-                                    <div class="cost-card__work">作業時間<br>30時間</div>
+                            <div class="cost-card__comparison">
+                                <div class="cost-card__before_wrapper">
+                                    <div class="cost-card__before">
+                                        <div class="cost-card__label"></div>
+                                        <div class="cost-card__box">
+                                            <div class="cost-card__work"></div>
+                                        </div>
+                                    </div>
+                                    <img class="right_arrow" src="./assets/icons/right_arrow.svg" alt="">
+                                </div>
+                                <div class="cost-card__after">
+                                    <div class="cost-card__box">
+                                        <div class="cost-card__work"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </template>
 
                 </div>
             </div>
         </section>
 
 
-        <!-- Campaign Banner 2 -->
-        <div class="campaign-banner" id="campaign-banner-2"></div>
+
+        <!-- Campaign Banner -->
+
+        <div class="campaign-banner">
+            <div class="campaign-banner__content">
+                
+                <div class="campaign-banner__inner">
+                    <div class="campaign-banner__badge_wrapper">
+                        <img class="campaign-banner__slash-left" src="./assets/icons/slashleft.svg" alt="">
+                        <div class="campaign-banner__badge">
+                            <div>毎月3社</div>
+                            <div>限定</div>
+                        </div>
+                        
+                        <div class="campaign-banner__text">
+                            <div class="campaign-banner__title">初期費用無料</div>
+                            <div class="campaign-banner__title">キャンペーン実施中</div>
+                        </div>
+                        <img class="campaign-banner__slash-right" src="./assets/icons/slashright.svg" alt="">
+                    </div>
+                    
+                    <button class="campaign-banner__button">
+                        資料請求・導入のご相談はこちらから
+                        <span class="campaign-banner__arrow">▶</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
 
         <!-- Features Section -->
         <section id="features" class="features-section">
             <div class="container">
-                <h2 class="section__title section__title--decorated">業務効率をUPさせる機能が充実</h2>
+                <h2 class="section__title">ー　業務効率をUPさせる機能が充実　ー</h2>
                 
                 <div class="features__diagram">
-                    <img src="" alt="業務フロー図" class="features__flowchart">
+                    <img src="./assets/images/diagram.svg" alt="業務フロー図" class="features__flowchart">
                 </div>
 
-                <div class="features__grid" id="features-grid">
-                    <!-- Feature cards will be generated by JavaScript -->
+                <div class="feature-cards-grid" id="feature-cards-container">
                 </div>
+
             </div>
         </section>
+
+
 
         <!-- Integrations Section -->
         <section id="integrations" class="integrations-section">

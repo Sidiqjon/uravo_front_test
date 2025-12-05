@@ -177,23 +177,6 @@ function addMessageAnimations() {
     document.head.appendChild(style);
 }
 
-// Campaign Banner Button Click Handler
-function initCampaignButtonHandlers() {
-    const campaignButtons = document.querySelectorAll('.campaign-banner__button');
-    
-    campaignButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Scroll to contact form
-            const contactSection = document.getElementById('contact');
-            if (contactSection) {
-                contactSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-}
 
 // Header CTA Button Click Handler
 function initHeaderButtonHandler() {
@@ -336,3 +319,124 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('ソルクラ for 販売管理 - Website loaded successfully! 🚀');
 });
+
+
+
+// <<>>MYCODE
+const costData = [
+    {
+        title: "毎月手動で送っていた請求書送付を自動化",
+        savings: "年100万",
+        beforeLabel: "通信10時間",
+        beforeWork: "作業時間<br>30時間",
+        afterWork: "作業時間<br>5時間"
+    },
+    {
+        title: "定型作業を自動化して業務効率を改善",
+        savings: "年80万",
+        beforeLabel: "通信8時間",
+        beforeWork: "作業時間<br>20時間",
+        afterWork: "作業時間<br>3時間"
+    },
+    {
+        title: "手動報告書作成を自動生成へ",
+        savings: "年120万",
+        beforeLabel: "通信12時間",
+        beforeWork: "作業時間<br>25時間",
+        afterWork: "作業時間<br>4時間"
+    },
+    {
+        title: "毎月の顧客管理を自動化",
+        savings: "年90万",
+        beforeLabel: "通信6時間",
+        beforeWork: "作業時間<br>15時間",
+        afterWork: "作業時間<br>2時間"
+    }
+];
+
+const grid = document.getElementById("costGrid");
+const template = document.getElementById("costCardTemplate");
+
+costData.map(item => {
+    const card = template.content.cloneNode(true);
+
+    card.querySelector(".cost-card__title").innerHTML = item.title;
+    card.querySelector(".cost-card__savings_number").innerHTML = item.savings;
+
+    card.querySelector(".cost-card__label").innerHTML = item.beforeLabel;
+    card.querySelector(".cost-card__before .cost-card__work").innerHTML = item.beforeWork;
+    card.querySelector(".cost-card__after .cost-card__work").innerHTML = item.afterWork;
+
+    grid.appendChild(card);
+});
+
+
+const featureCardsData = [
+    {
+        icon: "./assets/icons/featurecardicon.svg", 
+        title: "帳票管理機能",
+        text: "テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキスト テキス"
+    },
+    {
+        icon: "./assets/icons/featurecardicon.svg",
+        title: "販売管理機能",
+        text: "テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキスト テキス"
+    },
+    {
+        icon: "./assets/icons/featurecardicon.svg",
+        title: "在庫管理機能",
+        text: "テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキスト テキス"
+    },
+    {
+        icon: "./assets/icons/featurecardicon.svg",
+        title: "顧客管理機能",
+        text: "テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキスト テキス"
+    },
+    {
+        icon: "./assets/icons/featurecardicon.svg",
+        title: "請求管理機能",
+        text: "テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキスト テキス"
+    },
+    {
+        icon: "./assets/icons/featurecardicon.svg",
+        title: "発注管理機能",
+        text: "テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキスト テキス"
+    },
+    {
+        icon: "./assets/icons/featurecardicon.svg",
+        title: "分析機能",
+        text: "テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキスト テキス"
+    },
+    {
+        icon: "./assets/icons/featurecardicon.svg",
+        title: "レポート機能",
+        text: "テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキスト テキス"
+    },
+    {
+        icon: "./assets/icons/featurecardicon.svg",
+        title: "連携機能",
+        text: "テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキスト テキス"
+    }
+];
+
+function renderFeatureCards() {
+    const container = document.getElementById('feature-cards-container');
+    
+    const cardsHTML = featureCardsData.map(card => `
+        <div class="feature-card">
+            <div class="feature-card__header">
+                <div class="feature-card__icon">
+                    <img src="${card.icon}" alt="${card.title} icon">
+                </div>
+                <h3 class="feature-card__title">${card.title}</h3>
+            </div>
+            <div class="feature-card__body">
+                <p class="feature-card__text">${card.text}</p>
+            </div>
+        </div>
+    `).join('');
+    
+    container.innerHTML = cardsHTML;
+}
+
+document.addEventListener('DOMContentLoaded', renderFeatureCards);

@@ -43,8 +43,6 @@
     color: var(--color-primary);
 }
 
-
-
 /* Main Sections */
 section {
     padding: var(--spacing-6xl) 0;
@@ -147,19 +145,18 @@ section {
 }
 
 
-
 /* Integrations Section */
 .integrations-section {
-    background-color: var(--color-white);
+    background-color: #F4F9F8;
 }
 
 .integrations__header {
     text-align: center;
-    margin-bottom: var(--spacing-4xl);
+    margin-bottom: var(--spacing-3xl);
 }
 
 .integrations__logo {
-    max-width: 400px;
+    width: 600px;
     margin: 0 auto;
 }
 
@@ -167,21 +164,24 @@ section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-2xl);
+    margin-top: 10px;
 }
+
 
 /* Pricing Section */
 .pricing-section {
-    background-color: var(--color-lightest-gray);
+    background-color: var(--color-white);
 }
 
 .pricing__examples {
-    margin-top: var(--spacing-5xl);
+    margin-top: var(--spacing-3xl);
 }
 
 .pricing__examples-title {
     text-align: center;
-    font-size: var(--font-size-2xl);
-    margin-bottom: var(--spacing-4xl);
+    font-size: var(--font-size-3xl);
+    font-weight: bold;
+    margin-bottom: var(--spacing-2xl);
     color: var(--color-primary);
 }
 
@@ -189,32 +189,31 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-3xl);
+    gap: 36px;
+    margin-bottom: var(--spacing-2xl);
 }
+
 
 /* Comparison Section */
 .comparison-section {
-    background-color: var(--color-white);
+    background-color: #F4F9F8;
 }
 
-.comparison__wrapper {
-    overflow-x: auto;
-}
 
 /* Flow Section */
 .flow-section {
-    background-color: var(--color-lightest-gray);
+    background-color: var(--color-whitey);
 }
 
 .flow__steps {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
+
 /* Cases Section */
 .cases-section {
-    background-color: var(--color-white);
+    background-color: #F4F9F8;
 }
 
 .cases__grid {
@@ -223,30 +222,25 @@ section {
     gap: var(--spacing-3xl);
 }
 
+
 /* Services Section */
 .services-section {
-    background-color: var(--color-lightest-gray);
+    background-color: var(--color-white);
 }
 
-.services__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-xl);
-}
 
 /* Contact Section */
 .contact-section {
-    background-color: #FFF5F0;
-    padding: var(--spacing-6xl) 0;
+    background-color: #FCF5F0;
 }
 
 .contact__wrapper {
-    max-width: 900px;
+    max-width: 1125px;
     margin: 0 auto;
     background-color: var(--color-white);
-    padding: var(--spacing-5xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px #00000040;
 }
 
 .contact__header {
@@ -254,19 +248,22 @@ section {
 }
 
 .contact__title {
-    font-size: var(--font-size-3xl);
-    margin-bottom: var(--spacing-md);
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 15px;
 }
 
 .contact__subtitle {
-    color: var(--color-dark-gray);
+    font-size: 16px;
+    font-weight: 500;
 }
+
 
 /* Footer */
 .footer {
     background-color: var(--color-primary);
     color: var(--color-white);
-    padding: var(--spacing-5xl) 0 var(--spacing-3xl);
+    padding: 80px 140px;
 }
 
 .footer__content {
@@ -276,7 +273,7 @@ section {
 }
 
 .footer__title {
-    font-size: var(--font-size-lg);
+    font-size: 18px;
     margin-bottom: var(--spacing-lg);
     font-weight: var(--font-weight-bold);
 }
@@ -289,12 +286,14 @@ section {
 
 .footer__link {
     color: var(--color-white);
-    font-size: var(--font-size-sm);
+    font-size: 16px;
+    font-weight: 700;
     transition: opacity var(--transition-fast);
 }
 
 .footer__link:hover {
     opacity: 0.8;
+    color: #b63502;
 }
 
 .footer__column--logo {
@@ -314,21 +313,19 @@ section {
 }
 
 .footer__social-link {
-    width: 32px;
-    height: 32px;
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-sm);
-    transition: background-color var(--transition-fast);
 }
 
 .footer__social-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    transition: transform var(--transition-fast);
+    transform: scale(1.2);
 }
 
 .footer__social-link img {
-    width: 18px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
 }

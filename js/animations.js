@@ -44,7 +44,6 @@ function initScrollAnimations() {
         .cost-card,
         .feature-card,
         .case-card,
-        .service-card,
         .flow-step
     `);
 
@@ -100,7 +99,7 @@ function addActiveNavStyle() {
 
 // Card Hover Tilt Effect
 function initCardTiltEffect() {
-    const cards = document.querySelectorAll('.feature-card, .case-card, .service-card');
+    const cards = document.querySelectorAll('.feature-card, .case-card,');
     
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
